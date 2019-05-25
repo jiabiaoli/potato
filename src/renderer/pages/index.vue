@@ -121,7 +121,7 @@
             }, init() {
                 this.$db.findOne({type: 'settings'}, (err, docs) => {
                     if (docs) {
-                        this.appId = docs.appid;
+                        this.appId = docs.appId;
                         this.secret = docs.secret;
                     }
                 });

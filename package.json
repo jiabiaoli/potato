@@ -1,8 +1,8 @@
 {
   "name": "potato",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "jiabiaoli <jiabiaoli@boco.com.cn>",
-  "description": "翻译",
+  "description": "基于百度通用翻译的翻译软件",
   "license": null,
   "main": "./dist/electron/main.js",
   "scripts": {

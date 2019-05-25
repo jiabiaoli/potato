@@ -45,50 +45,54 @@ let template = [{
                 focusedWindow.reload()
             }
         }
-    }, {
-        label: '切换全屏',
-        accelerator: (() => {
-            if (process.platform === 'darwin') {
-                return 'Ctrl+Command+F'
-            } else {
-                return 'F11'
-            }
-        })(),
-        click: (item, focusedWindow) => {
-            if (focusedWindow) {
-                focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
-            }
-        }
-    }, {
-        label: '切换开发者工具',
-        accelerator: (() => {
-            if (process.platform === 'darwin') {
-                return 'Alt+Command+I'
-            } else {
-                return 'Ctrl+Shift+I'
-            }
-        })(),
-        click: (item, focusedWindow) => {
-            if (focusedWindow) {
-                focusedWindow.toggleDevTools()
-            }
-        }
-    }, {
-        type: 'separator'
-    }, {
-        label: '应用程序菜单演示',
-        click: function (item, focusedWindow) {
-            if (focusedWindow) {
-                const options = {
-                    type: 'info',
-                    title: '应用程序菜单演示',
-                    buttons: ['好的'],
-                    message: '此演示用于 "菜单" 部分, 展示如何在应用程序菜单中创建可点击的菜单项.'
-                }
-                dialog.showMessageBox(focusedWindow, options, function () {})
-            }
-        }
-    }]
+    },
+    //     {
+    //     label: '切换全屏',
+    //     accelerator: (() => {
+    //         if (process.platform === 'darwin') {
+    //             return 'Ctrl+Command+F'
+    //         } else {
+    //             return 'F11'
+    //         }
+    //     })(),
+    //     click: (item, focusedWindow) => {
+    //         if (focusedWindow) {
+    //             focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
+    //         }
+    //     }
+    // },
+    //     {
+    //     label: '切换开发者工具',
+    //     accelerator: (() => {
+    //         if (process.platform === 'darwin') {
+    //             return 'Alt+Command+I'
+    //         } else {
+    //             return 'Ctrl+Shift+I'
+    //         }
+    //     })(),
+    //     click: (item, focusedWindow) => {
+    //         if (focusedWindow) {
+    //             focusedWindow.toggleDevTools()
+    //         }
+    //     }
+    // },
+    //     {
+    //     type: 'separator'
+    // }, {
+    //     label: '应用程序菜单演示',
+    //     click: function (item, focusedWindow) {
+    //         if (focusedWindow) {
+    //             const options = {
+    //                 type: 'info',
+    //                 title: '应用程序菜单演示',
+    //                 buttons: ['好的'],
+    //                 message: '此演示用于 "菜单" 部分, 展示如何在应用程序菜单中创建可点击的菜单项.'
+    //             }
+    //             dialog.showMessageBox(focusedWindow, options, function () {})
+    //         }
+    //     }
+    // }
+    ]
 }, {
     label: '窗口',
     role: 'window',
@@ -111,16 +115,18 @@ let template = [{
             app.emit('activate')
         }
     }]
-}, {
-    label: '帮助',
-    role: 'help',
-    submenu: [{
-        label: '学习更多',
-        click: () => {
-            shell.openExternal('http://electron.atom.io')
-        }
-    }]
-}]
+}
+// , {
+//     label: '帮助',
+//     role: 'help',
+//     submenu: [{
+//         label: '学习更多',
+//         click: () => {
+//             shell.openExternal('http://electron.atom.io')
+//         }
+//     }]
+// }
+]
 
 function addUpdateMenuItems (items, position) {
     if (process.mas) return
@@ -150,7 +156,7 @@ function addUpdateMenuItems (items, position) {
         }
     }]
 
-    items.splice.apply(items, [position, 0].concat(updateItems))
+    //items.splice.apply(items, [position, 0].concat(updateItems))
 }
 
 function findReopenMenuItem () {
@@ -174,10 +180,12 @@ if (process.platform === 'darwin') {
     const name = app.getName()
     template.unshift({
         label: name,
-        submenu: [{
-            label: `关于 ${name}`,
-            role: 'about'
-        },{
+        submenu: [
+        //     {
+        //     label: `关于 ${name}`,
+        //     role: 'about'
+        // },
+            {
             label: `首选项`,
             accelerator: 'CmdOrCtrl+,',
             click: function (item, focusedWindow) {
@@ -192,7 +200,7 @@ if (process.platform === 'darwin') {
         }, {
             type: 'separator'
         }, {
-            label: `隐藏 ${name}`,
+            label: `隐藏`,
             accelerator: 'Command+H',
             role: 'hide'
         }, {

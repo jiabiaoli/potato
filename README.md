@@ -2,6 +2,10 @@
 
 > 翻译
 
+一款基于百度通用翻译的翻译软件
+
+目前的大多数翻译软件,界面比较复杂,使用方式自己不太喜欢,所以做了这么一个软件,自己使用
+
 #### Build Setup
 
 ``` bash
@@ -16,7 +20,3 @@ npm run build
 
 
 ```
-
----
-
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[8fae476](https://github.com/SimulatedGREG/electron-vue/tree/8fae4763e9d225d3691b627e83b9e09b56f6c935) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).

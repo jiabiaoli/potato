@@ -51,7 +51,7 @@
                 formItem:{
                     appId:'',
                     secret:'',
-                    key:'ALT+E',
+                    key:'CommandOrControl+E',
                     plate:true,
                     type:'settings',
                     copy:true
